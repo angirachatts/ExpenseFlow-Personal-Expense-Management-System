@@ -293,7 +293,7 @@ sequenceDiagram
 
 ## Dashboard — Charts
 
-![Dashboard Charts](docs/screenshots/Dashboard_with_Charts.png)
+![Dashboard Charts](docs/screenshots/Dashboard_with_charts.png)
 
 ## Expenses
 
@@ -338,8 +338,8 @@ If Docker is not available:
 ## Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/pankajkevat21/personal-expense-management-system.git
-cd personal-expense-management-system
+git clone https://github.com/angirachatts/ExpenseFlow-Personal-Expense-Management-System.git
+cd ExpenseFlow-Personal-Expense-Management-System
 ```
 
 ---
@@ -508,48 +508,66 @@ Authorization: Bearer <your_jwt_token>
 #  Project Structure
 
 ```text
-pems/
-├── src/main/java/com/example/pems/
-│   ├── config/
-│   │   ├── SecurityConfig.java
-│   │   ├── CorsConfig.java
-│   │   └── OpenApiConfig.java
+ExpenseFlow/
+├── src/
+│   ├── main/
+│   │   ├── java/com/example/expenseflow/
+│   │   │   ├── config/
+│   │   │   │   ├── SecurityConfig.java
+│   │   │   │   ├── CorsConfig.java
+│   │   │   │   └── OpenApiConfig.java
+│   │   │   │
+│   │   │   ├── controller/
+│   │   │   │   ├── AuthController.java
+│   │   │   │   ├── UserController.java
+│   │   │   │   ├── ExpenseController.java
+│   │   │   │   ├── IncomeController.java
+│   │   │   │   ├── CategoryController.java
+│   │   │   │   ├── IncomeCategoryController.java
+│   │   │   │   └── DashboardController.java
+│   │   │   │
+│   │   │   ├── dto/
+│   │   │   │   ├── LoginRequest.java
+│   │   │   │   ├── DashboardResponse.java
+│   │   │   │   ├── ErrorResponse.java
+│   │   │   │   └── ExpenseRequestDTO.java
+│   │   │   │
+│   │   │   ├── entity/
+│   │   │   │   ├── User.java
+│   │   │   │   ├── Expense.java
+│   │   │   │   ├── Income.java
+│   │   │   │   ├── Category.java
+│   │   │   │   └── IncomeCategory.java
+│   │   │   │
+│   │   │   ├── exception/
+│   │   │   │   ├── GlobalExceptionHandler.java
+│   │   │   │   ├── ResourceNotFoundException.java
+│   │   │   │   └── BadRequestException.java
+│   │   │   │
+│   │   │   ├── repository/
+│   │   │   │   ├── UserRepository.java
+│   │   │   │   ├── ExpenseRepository.java
+│   │   │   │   ├── IncomeRepository.java
+│   │   │   │   ├── CategoryRepository.java
+│   │   │   │   ├── IncomeCategoryRepository.java
+│   │   │   │   └── DashboardRepository.java
+│   │   │   │
+│   │   │   ├── security/
+│   │   │   │   └── JwtAuthenticationFilter.java
+│   │   │   │
+│   │   │   └── service/
+│   │   │       ├── UserService.java
+│   │   │       ├── ExpenseService.java
+│   │   │       ├── IncomeService.java
+│   │   │       ├── CategoryService.java
+│   │   │       ├── IncomeCategoryService.java
+│   │   │       ├── DashboardService.java
+│   │   │       └── JwtService.java
+│   │   │
+│   │   └── resources/
+│   │       └── application.properties
 │   │
-│   ├── controller/
-│   │   ├── AuthController.java
-│   │   ├── UserController.java
-│   │   ├── ExpenseController.java
-│   │   ├── IncomeController.java
-│   │   ├── CategoryController.java
-│   │   ├── IncomeCategoryController.java
-│   │   └── DashboardController.java
-│   │
-│   ├── dto/
-│   │   ├── LoginRequest.java
-│   │   ├── DashboardResponse.java
-│   │   └── ErrorResponse.java
-│   │
-│   ├── entity/
-│   │   ├── User.java
-│   │   ├── Expense.java
-│   │   ├── Income.java
-│   │   ├── Category.java
-│   │   └── IncomeCategory.java
-│   │
-│   ├── exception/
-│   │   ├── GlobalExceptionHandler.java
-│   │   ├── ResourceNotFoundException.java
-│   │   └── BadRequestException.java
-│   │
-│   ├── repository/
-│   │
-│   ├── security/
-│   │   └── JwtAuthenticationFilter.java
-│   │
-│   └── service/
-│
-├── src/main/resources/
-│   └── application.properties
+│   └── test/
 │
 ├── pems-frontend/
 │   ├── src/
